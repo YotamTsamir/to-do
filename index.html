@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo MVC</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body onload="onInit()" oncontextmenu="console.log('BODYBODY')">
+    <h1 oncontextmenu="event.stopPropagation();event.preventDefault();console.log('TODO!')">Todo</h1>
+    <section class="todo-filter">
+        <h2>Filter</h2>
+        <select onchange="onSetFilter(this.value)">
+            <option value="">All</option>
+            <option value="active">Active Todos</option>
+            <option value="done">עשיתי</option>
+        </select>
+        <select onchange="onSortToDo(this.value)">
+        <option value="timeAt">time</option>
+        <option value="txt">text</option>
+        <option value="imp">importance</option>
+        </select>
+    </section>
+    <ul class="todo-list"></ul>
+
+    <section class="add-todo-container">
+        <form onsubmit="onAddTodo(event)">
+            <input type="text" autocomplete="off"  name="txt" placeholder="Add your Todo" />
+            <input type="text" autocomplete="off"  name="imp" placeholder="how important?(1-3)" />
+            <button>Add</button>
+            <button type="button">DONT SUBMIT</button>
+        </form>
+    </section>
+    <section class="todo-stat">
+        <h3>
+            Total Todos:
+            <span class="total-count">3</span>
+            Active:
+            <span class="active-count">2</span>
+        </h3>
+    </section>
+
+    <script src="js/services/storage.service.js"></script>
+    <script src="js/services/todo.service.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

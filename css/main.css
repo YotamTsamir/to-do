@@ -1,0 +1,22 @@
+body {
+    background-color: lightblue;
+}
+
+
+.todo-filter {
+    background-color: darkcyan;
+    color: whitesmoke;
+    padding: 10px;
+}
+.add-todo-container {
+    background-color: darkgoldenrod;
+    padding: 10px;
+}
+
+.todo-stat h3 span {
+    color: darkgoldenrod;
+}
+
+.done {
+    text-decoration: line-through;
+}
